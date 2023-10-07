@@ -1,23 +1,5 @@
 package com.example.clothshop.controller;
 
-
-//import com.example.clothshop.model.User;
-//import org.junit.Test;
-//import org.junit.runner.RunWith;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.boot.test.mock.mockito.MockBean;
-//import org.springframework.boot.test.web.client.TestRestTemplate;
-//import org.springframework.boot.test.web.server.LocalServerPort;
-//import org.springframework.http.*;
-//import org.springframework.test.context.junit4.SpringRunner;
-//import org.springframework.web.client.HttpClientErrorException;
-//
-//import javax.faces.application.Application;
-//
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -40,16 +22,12 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
 
-//    @LocalServerPort
-//    private int port;
 
     private String getRootUrl() {
         return "http://localhost:8080/api/";
@@ -116,67 +94,4 @@ public class UserTest {
         }
     }
 }
-
-
-//    @Test
-//    public void contextLoads() {
-//    }
-//
-//    @MockBean
-//    UserService userService;
-//
-//    @LocalServerPort
-//    private int port;
-//
-//    @Autowired
-//    private TestRestTemplate testRestTemplate;
-//
-//    HttpHeaders headers = new HttpHeaders();
-//
-//    public ResponseEntity<String> doRestCall(String url, MultiValueMap<String, String> queryParam,
-//                                             Map<String, String> pathParam, String body, MultiValueMap<String, String> header, HttpMethod method) {
-//        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
-//        HttpEntity<String> entity = new HttpEntity<>(body, header);
-//
-//        ResponseEntity<String> response = testRestTemplate.exchange(builder.buildAndExpand(pathParam).toUri(),
-//                method, entity, String.class);
-//        return response;
-//    }
-//
-//    @Test
-//    public void getUserTest() {
-//        String url = "http://localhost:" + port + "/user/{id}";
-//        Map<String, String> pathVariable = new HashMap<>();
-//        pathVariable.put("id", "1");
-//
-//        HttpEntity<String> entity = new HttpEntity<>(null, null);
-//        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
-//
-//        ResponseEntity<String> response = testRestTemplate.exchange(builder.buildAndExpand(pathVariable).toUri(),
-//                HttpMethod.GET, entity, String.class);
-//        System.out.println(response.getBody());
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-//    }
-//
-//    @Test
-//    public void addUserTest() {
-//        String url = "http://localhost:" + port + "/user";
-//        String body = "{\n" +
-//                " \"login\": \"John\", \n" +
-//                " \"firstName\": \"Odisha\" \n" +
-//                " \"password\": \"Odisha\" \n" +
-//                " \"birthday\": \"02.01.2023\" \n" +
-//                " \"email\": \"odisha@gmail.com\" \n" +
-//                "}";
-//
-//        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-//        List<String> al = new ArrayList<>();
-//        al.add("application/json");
-//        headers.put("Content-Type", al);
-//        Map<String, String> pathParam = new HashMap<>();
-//
-//        ResponseEntity<String> response = doRestCall(url, null, pathParam, body,
-//                headers, HttpMethod.POST);
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-//    }
 
