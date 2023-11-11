@@ -95,6 +95,12 @@
                 </configuration>
             </plugin> 
 
+            <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+                  <dependency>
+                      <groupId>org.jacoco</groupId>
+                      <artifactId>jacoco-maven-plugin</artifactId>
+                      <version>0.8.10</version>
+                  </dependency>
             <plugin>
                  <groupId>org.sonarsource.scanner.maven</groupId>
                  <artifactId>sonar-maven-plugin</artifactId>
